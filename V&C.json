@@ -1,5 +1,5 @@
 {
- data: {<div class="section" id="ID310">
+ "data": {<div class="section" id="ID310">
 <h2>Constants and Variables<a class="headerlink" href="#ID310" title="Permalink to this headline">¶</a></h2>
 <p>Constants and variables associate a name (such as <code class="docutils literal notranslate"><span class="pre">maximumNumberOfLoginAttempts</span></code> or <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code>) with a value of a particular type (such as the number <code class="docutils literal notranslate"><span class="pre">10</span></code> or the string <code class="docutils literal notranslate"><span class="pre">"Hello"</span></code>). The value of a <em>constant</em> can’t be changed once it’s set, whereas a <em>variable</em> can be set to a different value in the future.</p>
 <div class="section" id="ID311">
