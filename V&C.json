@@ -1,0 +1,85 @@
+{
+ data: {<div class="section" id="ID310">
+<h2>Constants and Variables<a class="headerlink" href="#ID310" title="Permalink to this headline">¶</a></h2>
+<p>Constants and variables associate a name (such as <code class="docutils literal notranslate"><span class="pre">maximumNumberOfLoginAttempts</span></code> or <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code>) with a value of a particular type (such as the number <code class="docutils literal notranslate"><span class="pre">10</span></code> or the string <code class="docutils literal notranslate"><span class="pre">"Hello"</span></code>). The value of a <em>constant</em> can’t be changed once it’s set, whereas a <em>variable</em> can be set to a different value in the future.</p>
+<div class="section" id="ID311">
+<h3>Declaring Constants and Variables<a class="headerlink" href="#ID311" title="Permalink to this headline">¶</a></h3>
+<p>Constants and variables must be declared before they’re used. You declare constants with the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword and variables with the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword. Here’s an example of how constants and variables can be used to track the number of login attempts a user has made:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">maximumNumberOfLoginAttempts</span> = <span class="m">10</span>
+</li><li><span class="k">var</span> <span class="nv">currentLoginAttempt</span> = <span class="m">0</span>
+</li></ol></div></div></div>
+<p>This code can be read as:</p>
+<p>“Declare a new constant called <code class="docutils literal notranslate"><span class="pre">maximumNumberOfLoginAttempts</span></code>, and give it a value of <code class="docutils literal notranslate"><span class="pre">10</span></code>. Then, declare a new variable called <code class="docutils literal notranslate"><span class="pre">currentLoginAttempt</span></code>, and give it an initial value of <code class="docutils literal notranslate"><span class="pre">0</span></code>.”</p>
+<p>In this example, the maximum number of allowed login attempts is declared as a constant, because the maximum value never changes. The current login attempt counter is declared as a variable, because this value must be incremented after each failed login attempt.</p>
+<p>You can declare multiple constants or multiple variables on a single line, separated by commas:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">x</span> = <span class="m">0.0</span>, <span class="nv">y</span> = <span class="m">0.0</span>, <span class="nv">z</span> = <span class="m">0.0</span>
+</li></ol></div></div></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a stored value in your code won’t change, always declare it as a constant with the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword. Use variables only for storing values that need to be able to change.</p>
+</div>
+</div>
+<div class="section" id="ID312">
+<h3>Type Annotations<a class="headerlink" href="#ID312" title="Permalink to this headline">¶</a></h3>
+<p>You can provide a <em>type annotation</em> when you declare a constant or variable, to be clear about the kind of values the constant or variable can store. Write a type annotation by placing a colon after the constant or variable name, followed by a space, followed by the name of the type to use.</p>
+<p>This example provides a type annotation for a variable called <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code>, to indicate that the variable can store <code class="docutils literal notranslate"><span class="pre">String</span></code> values:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">welcomeMessage</span>: <span class="nc">String</span>
+</li></ol></div></div></div>
+<p>The colon in the declaration means “…of type…,” so the code above can be read as:</p>
+<p>“Declare a variable called <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> that’s of type <code class="docutils literal notranslate"><span class="pre">String</span></code>.”</p>
+<p>The phrase “of type <code class="docutils literal notranslate"><span class="pre">String</span></code>” means “can store any <code class="docutils literal notranslate"><span class="pre">String</span></code> value.” Think of it as meaning “the type of thing” (or “the kind of thing”) that can be stored.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> variable can now be set to any string value without error:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">welcomeMessage</span> = <span class="s">"Hello"</span>
+</li></ol></div></div></div>
+<p>You can define multiple related variables of the same type on a single line, separated by commas, with a single type annotation after the final variable name:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">red</span>, <span class="nv">green</span>, <span class="nv">blue</span>: <span class="nc">Double</span>
+</li></ol></div></div></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It’s rare that you need to write type annotations in practice. If you provide an initial value for a constant or variable at the point that it’s defined, Swift can almost always infer the type to be used for that constant or variable, as described in <a class="reference internal" href="#ID322"><span class="std std-ref">Type Safety and Type Inference</span></a>. In the <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> example above, no initial value is provided, and so the type of the <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> variable is specified with a type annotation rather than being inferred from an initial value.</p>
+</div>
+</div>
+<div class="section" id="ID313">
+<h3>Naming Constants and Variables<a class="headerlink" href="#ID313" title="Permalink to this headline">¶</a></h3>
+<p>Constant and variable names can contain almost any character, including Unicode characters:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">π</span> = <span class="m">3.14159</span>
+</li><li><span class="k">let</span> <span class="nv">你好</span> = <span class="s">"你好世界"</span>
+</li><li><span class="k">let</span> <span class="nv">🐶🐮</span> = <span class="s">"dogcow"</span>
+</li></ol></div></div></div>
+<p>Constant and variable names can’t contain whitespace characters, mathematical symbols, arrows, private-use Unicode scalar values, or line- and box-drawing characters. Nor can they begin with a number, although numbers may be included elsewhere within the name.</p>
+<p>Once you’ve declared a constant or variable of a certain type, you can’t declare it again with the same name, or change it to store values of a different type. Nor can you change a constant into a variable or a variable into a constant.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you need to give a constant or variable the same name as a reserved Swift keyword, surround the keyword with backticks (<code class="docutils literal notranslate"><span class="pre">`</span></code>) when using it as a name. However, avoid using keywords as names unless you have absolutely no choice.</p>
+</div>
+<p>You can change the value of an existing variable to another value of a compatible type. In this example, the value of <code class="docutils literal notranslate"><span class="pre">friendlyWelcome</span></code> is changed from <code class="docutils literal notranslate"><span class="pre">"Hello!"</span></code> to <code class="docutils literal notranslate"><span class="pre">"Bonjour!"</span></code>:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">friendlyWelcome</span> = <span class="s">"Hello!"</span>
+</li><li><span class="nv">friendlyWelcome</span> = <span class="s">"Bonjour!"</span>
+</li><li><span class="c">// friendlyWelcome is now "Bonjour!"</span>
+</li></ol></div></div></div>
+<p>Unlike a variable, the value of a constant can’t be changed after it’s set. Attempting to do so is reported as an error when your code is compiled:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">languageName</span> = <span class="s">"Swift"</span>
+</li><li><span class="nv">languageName</span> = <span class="s">"Swift++"</span>
+</li><li><span class="c">// This is a compile-time error: languageName cannot be changed.</span>
+</li></ol></div></div></div>
+</div>
+<div class="section" id="ID314">
+<h3>Printing Constants and Variables<a class="headerlink" href="#ID314" title="Permalink to this headline">¶</a></h3>
+<p>You can print the current value of a constant or variable with the <code class="docutils literal notranslate"><span class="pre">print(_:separator:terminator:)</span></code> function:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="nv">friendlyWelcome</span>)
+</li><li><span class="c">// Prints "Bonjour!"</span>
+</li></ol></div></div></div>
+<p>The <code class="docutils literal notranslate"><span class="pre">print(_:separator:terminator:)</span></code> function is a global function that prints one or more values to an appropriate output. In Xcode, for example, the <code class="docutils literal notranslate"><span class="pre">print(_:separator:terminator:)</span></code> function prints its output in Xcode’s “console” pane. The <code class="docutils literal notranslate"><span class="pre">separator</span></code> and <code class="docutils literal notranslate"><span class="pre">terminator</span></code> parameter have default values, so you can omit them when you call this function. By default, the function terminates the line it prints by adding a line break. To print a value without a line break after it, pass an empty string as the terminator—for example, <code class="docutils literal notranslate"><span class="pre">print(someValue,</span> <span class="pre">terminator:</span> <span class="pre">"")</span></code>. For information about parameters with default values, see <a class="reference internal" href="Functions.html#ID169"><span class="std std-ref">Default Parameter Values</span></a>.</p>
+<p>Swift uses <em>string interpolation</em> to include the name of a constant or variable as a placeholder in a longer string, and to prompt Swift to replace it with the current value of that constant or variable. Wrap the name in parentheses and escape it with a backslash before the opening parenthesis:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="s">"The current value of friendlyWelcome is </span>\<span class="p">(</span><span class="nv">friendlyWelcome</span><span class="p">)</span><span class="s">"</span>)
+</li><li><span class="c">// Prints "The current value of friendlyWelcome is Bonjour!"</span>
+</li></ol></div></div></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All options you can use with string interpolation are described in <a class="reference internal" href="StringsAndCharacters.html#ID292"><span class="std std-ref">String Interpolation</span></a>.</p>
+</div>
+</div>
+</div>
+}
+  
+}
